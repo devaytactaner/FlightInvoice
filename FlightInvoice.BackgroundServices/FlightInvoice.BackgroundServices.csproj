@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>dotnet-FlightInvoice.BackgroundService-00c3a855-b67c-4e5a-8085-c3bda1fa348c</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Remove="appsettings.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="appsettings.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\FlightInvoice.PdfConverter\FlightInvoice.PdfConverter.csproj" />
+		<ProjectReference Include="..\FlightInvoice.SftpReader\FlightInvoice.SftpReader.csproj" />
+	</ItemGroup>
+</Project>
